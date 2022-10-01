@@ -1,0 +1,23 @@
+def solution(dartResult):
+
+
+
+
+    answer = 0
+    score = []
+    area = {"S" :1, "D" : 2, "T" :3}
+    for result in dartResult:
+        if len(score) == 0:
+            score.append(result)
+        elif result.isdigit():
+            if type(score[-1]) == str:
+                score.append(score.pop() + result)
+            else:
+                score.append(result)
+
+
+
+    return answer
+
+d = "1S2D*3T"
+print(solution(d))
